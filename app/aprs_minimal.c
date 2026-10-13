@@ -225,7 +225,7 @@ static void APRS_TransmitBell202(const uint8_t *frame, uint16_t frame_len)
     BK4819_WriteRegister(BK4819_REG_2B, filt_val);
     BK4819_WriteRegister(BK4819_REG_51, css_val);
 
-    APP_EndTransmission();
+    APP_EndTransmission(true);
     FUNCTION_Select(FUNCTION_FOREGROUND);
 }
 
@@ -841,7 +841,7 @@ static void APRS_ShowFrame(const uint8_t *frame, uint16_t len)
         gAPRS_RxDisplayTimer = 60;   // 30 s, then VFO B is redrawn
         gUpdateDisplay = true;
         APRS_EmitMonitor();
-        AUDIO_PlayBeep(BEEP_880HZ_60MS_DOUBLE_BEEP);
+        AUDIO_PlayBeep(BEEP_500HZ_60MS_DOUBLE_BEEP);
         return;
     }
 
