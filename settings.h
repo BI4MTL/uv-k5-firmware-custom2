@@ -270,6 +270,13 @@ typedef struct {
 	uint8_t               S9_LEVEL;
 #endif
     uint32_t MDC1200_ID;
+// ===== APRS 相关变量 =====
+    char APRS_CALLSIGN[10];
+    uint8_t APRS_SSID;
+    int32_t APRS_LATITUDE;
+    int32_t APRS_LONGITUDE;
+    char APRS_COMMENT[32];
+    uint8_t APRS_INTERVAL;
 } EEPROM_Config_t;
 
 extern EEPROM_Config_t gEeprom;
